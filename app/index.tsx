@@ -14,18 +14,6 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      {/*<TextInput 
-        style={{
-          borderColor: BLUE_THEME,
-          color: 'white',
-          borderWidth: 1,
-          borderStyle: "solid",
-          height: 30,
-          backgroundColor: BLUE_THEME
-        }} 
-        placeholder="Enter Group Name.." />
-      <Text style={{margin: 30}}>OR</Text>
-      */}
       <Button color={BLUE_THEME} title="Create New Group" onPress={() => navigation.navigate('new' as never)}/>
     </View>
 </>

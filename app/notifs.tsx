@@ -1,6 +1,8 @@
 import { Text, View } from "react-native";
+import { validateUser } from "./be";
 
-export default function Index() {
+export default function Notifs() {
+
   return (
     <>
     <View

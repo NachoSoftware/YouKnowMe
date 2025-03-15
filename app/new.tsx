@@ -1,9 +1,9 @@
 import React from "react";
 import { Button, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { getLink } from "./be";
 
 const BLUE_THEME = "rgb(0, 0, 255)";
 
-const getLink = (n: number) => `LINK_${n}`;
 
 export default function New() {
   const [nLinks, setNLinks] = React.useState(0);

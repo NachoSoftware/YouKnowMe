@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { getLink } from "./be";
+import { getInviteUserLink, getLink } from "./be";
 
 const BLUE_THEME = "rgb(0, 0, 255)";
 
@@ -14,7 +14,7 @@ export default function New() {
   const getLinks = (n: number) => {
     const linkArr = [];
     for (let i = 0; i < nLinks; i++){
-      linkArr.push(getLink(i))
+      linkArr.push(getInviteUserLink())
     }
     setLinks(linkArr);
   };

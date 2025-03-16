@@ -40,4 +40,50 @@ export const validateUser = ({ id }: ValidateUserProps) => {
     return UserValidationStatus.Valid;
 };
 
-export const getLink = (n: number) => `LINK_${n}`;
+interface GetUserProps {
+    id: string;
+}
+
+const Example_User = {
+    id: 12345,
+    status: UserValidationStatus.Valid,
+}
+
+export const getUser = ({ id }: GetUserProps) => {
+    return Example_User;
+};
+
+export const getInviteUserLink = () => `LINK`;
+
+const userInput = () => '123';
+
+const newConductor_flow = () => {
+    const name = userInput(); 
+    const n = userInput();
+    const links = new Array<string>(n).map(() => getInviteUserLink());
+    createLinkGroup({ name, links});
+}
+
+interface NewPlayer_flow {
+    inviteLinkId: string;
+}
+
+const createPlayer = (username: string, inviteLinkId: string) => {
+    return getUser({ id: username});
+}
+
+
+
+const newPlayer_flow = ({ inviteLinkId }: NewPlayer_flow) => {
+    // on load
+    const username = userInput();
+    
+    const player = createPlayer(username, inviteLinkId):
+
+    switch(player.status){
+        case UserValidationStatus.Validating:
+            return "Waiting for other "
+        case UserValidationStatus.Valid:
+            return "You have joined the group!";
+    }
+};
